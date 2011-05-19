@@ -6,16 +6,16 @@ require 'pygments'
 
 class Viso < Sinatra::Base
 
+  set :public, 'public'
+
   get '/' do
-    [ 200, {}, code ]
+    erb :show
   end
 
   def code
-    file     = File.open __FILE__
-    filename = File.basename file.path
-    code     = file.read
+    file = File.open __FILE__
 
-    Pygments.highlight code, :lexer => 'ruby', :options => { :full => true }
+    Pygments.highlight file.read, :lexer => 'ruby'
   end
 
 end
