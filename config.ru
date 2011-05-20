@@ -1,8 +1,10 @@
 # https://github.com/lmarburger/pygments.rb-test
 
 require 'rubygems'
-require 'pygments'
 require 'sinatra/base'
+
+require 'pygments'
+Pygments.configure :python_exe => 'python2.6'
 
 class PygmentsTest < Sinatra::Base
 
