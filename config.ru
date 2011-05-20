@@ -1,10 +1,10 @@
+# https://github.com/lmarburger/pygments.rb-test
+
 require 'rubygems'
-require 'bundler/setup'
-
-require 'sinatra/base'
 require 'pygments'
+require 'sinatra/base'
 
-class Viso < Sinatra::Base
+class PygmentsTest < Sinatra::Base
 
   set :public, 'public'
 
@@ -20,5 +20,4 @@ class Viso < Sinatra::Base
 
 end
 
-
-run Viso
+run PygmentsTest
