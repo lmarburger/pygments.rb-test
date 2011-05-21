@@ -1,10 +1,12 @@
 # https://github.com/lmarburger/pygments.rb-test
 
+require 'pygments'
 require 'rubygems'
 require 'sinatra/base'
 
-require 'pygments'
-Pygments.configure :python_exe => 'python2.6'
+# Use python2.6 as 2.7 errors on some Heroku stacks.
+require 'rubypython'
+RubyPython.configure :python_exe => 'python2.6'
 
 class PygmentsTest < Sinatra::Base
 
